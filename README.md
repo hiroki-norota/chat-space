@@ -2,7 +2,7 @@
 
 usersテーブル
 |Column|Type|Options|
-|———|——|———-|
+|------|----|-------|
 |email|string|null: false|
 |password|string|null: false|
 |username|string|null: false|
@@ -25,7 +25,7 @@ usersテーブル
 
 titlesテーブル
 |Column|Type|Options|
-|———|——|———-|
+|------|----|-------|
 |text|text|null: false|
 
 ### Association
@@ -36,7 +36,7 @@ titlesテーブル
 
 chatsテーブル
 |Column|Type|Options|
-|———|——|———-|
+|------|----|-------|
 |text|text||
 |image|text||
 
