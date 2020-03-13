@@ -1,6 +1,7 @@
 # DB設計
 
-usersテーブル
+##usersテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |email|string|null: false|
@@ -23,7 +24,7 @@ usersテーブル
 - belongs_to :group
 - belongs_to :user
 
-titlesテーブル
+##　titlesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
@@ -34,7 +35,7 @@ titlesテーブル
 - has_many :users
 
 
-chatsテーブル
+##　chatsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text||
