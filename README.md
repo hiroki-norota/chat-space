@@ -4,33 +4,33 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|email|string|null: false|
+|email|string|null: false, unique: true|
 |password|string|null: false|
-|username|string|null: false|
+|username|string|null: false, unique: true|
 
 ### Association
-- has_many : group-users
+- has_many :groups
 - has_many :chats
-- has_many :titles
 
-## groups_usersテーブル
+## groups_users_chatsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
+|chat_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
 - belongs_to :user
+- belongs_to :chat
 
-## titlesテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
 
 ### Association
-- has_many : group-users
 - has_many :chats
 - has_many :users
 
@@ -42,6 +42,5 @@
 |image|text||
 
 ### Association
-
-- has_many : group-users
+- has_many :groups
 - has_many :users
