@@ -6,14 +6,14 @@
 |------|----|-------|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|username|string|null: false, unique: true|
+|name|string|null: false, unique: true|
 
 ### Association
-- has_many :groups, through: :groups_users_chats
-- has_many :chats, through: :groups_users_chats
-- has_many :groups_users_chats
+- has_many :groups, through: :groups_users
+- has_many :chats
+- has_many :groups_users
 
-## groups_users_chatsテーブル
+## groups_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -29,12 +29,12 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|name|string|null: false|
 
 ### Association
-- has_many :chats, through: :groups_users_chats
-- has_many :users, through: :groups_users_chats
-- has_many :groups_users_chats
+- has_many :chats
+- has_many :users, through: :groups_users
+- has_many :groups_users
 
 
 ## chatsテーブル
@@ -44,6 +44,6 @@
 |image|text||
 
 ### Association
-- has_many :groups, through: :groups_users_chats
-- has_many :users, through: :groups_users_chats
-- has_many :groups_users_chats
+- has_many :groups
+- has_many :users
+- has_many :groups_users
