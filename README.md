@@ -9,8 +9,9 @@
 |username|string|null: false, unique: true|
 
 ### Association
-- has_many :groups
-- has_many :chats
+- has_many :groups, through: :groups_users_chats
+- has_many :chats, through: :groups_users_chats
+- has_many :groups_users_chats
 
 ## groups_users_chatsテーブル
 
@@ -31,8 +32,9 @@
 |text|text|null: false|
 
 ### Association
-- has_many :chats
-- has_many :users
+- has_many :chats, through: :groups_users_chats
+- has_many :users, through: :groups_users_chats
+- has_many :groups_users_chats
 
 
 ## chatsテーブル
@@ -42,5 +44,6 @@
 |image|text||
 
 ### Association
-- has_many :groups
-- has_many :users
+- has_many :groups, through: :groups_users_chats
+- has_many :users, through: :groups_users_chats
+- has_many :groups_users_chats
