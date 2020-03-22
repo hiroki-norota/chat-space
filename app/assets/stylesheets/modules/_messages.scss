@@ -1,7 +1,6 @@
 * {
   box-sizing: border-box;
 }
-$main_color: #ffffff;
 
 .wrapper {
   height: 100vh;
@@ -10,7 +9,7 @@ $main_color: #ffffff;
 
 .side-bar {
   width: 300px;
-  background-color: #2f3e51;
+  background-color: $side-color;
   &__user {
     background-color: #253141;
     height: 100px;
@@ -40,7 +39,7 @@ $main_color: #ffffff;
   }
 
   .groups {
-    background-color: #2f3e51;
+    background-color: $side-color;
     height: calc(100vh - 100px);
     padding: 20px;
     .group {
@@ -82,8 +81,8 @@ $main_color: #ffffff;
     }
     .edit__btn {
       width: 72px;
-      color: #38aef0;
-      border: 1px solid #38aef0;
+      color: $btn-color;
+      border: 1px solid $btn-color;
       font-size: 16px;
       margin: 28px 20px 32px 20px;
       text-align: center;
@@ -151,7 +150,7 @@ $main_color: #ffffff;
         height: 50px;
         padding: 0 30px;
         margin-left: 15px;
-        background-color: #38aef0;
+        background-color: $btn-color;
         color: white;
         cursor: pointer;
       }
