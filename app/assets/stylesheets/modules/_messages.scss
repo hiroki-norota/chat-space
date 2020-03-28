@@ -45,13 +45,14 @@
     .group {
       text-decoration: none;
       margin-bottom: 40px;
-      color: $main_color;
       &__group-name {
         font-size: 15px;
         padding-bottom: 5px;
+        color: $main_color;
       }
       &__letest-message {
         font-size: 11px;
+        color: $main_color;
       }
     }
   }
