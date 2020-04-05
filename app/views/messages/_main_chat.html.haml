@@ -2,35 +2,20 @@
   .chat-main__group
     .chat-main__group__title
       %p.group-name
-        test
+        = @group.name
       %p.member-name
-        Member :masa
-    = link_to "#", class: "edit__btn" do
+        Member :
+        - @group.users.each do |user|
+          = user.name
+    = link_to "/groups/#{@group.id}/edit", class: "edit__btn" do
       Edit
   .message
-    .chat-post
-      .chat-post__contents
-        %p.member-name
-          masa
-        %p.day-time
-          2019/11/20(Wed) 17:43:01
-      %p.chat-post__message
-        おはよう！
-    .chat-post
-      .chat-post__contents
-        %p.member-name
-          masa
-        %p.day-time
-          2019/11/20(Wed) 17:43:34
-      %p.chat-post__message
-        今日は夜から雨
+    = render @messages
   .form
-    %form
-      .input-box
-        %input.input-box__text{:placeholder => "type a message", :type => "text"}
-        %label{class: "input-box__image"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :text, class: 'form-text', placeholder: 'type a message'
+      .input-box        
+        = f.label :image, class: 'input-box__image' do
           =icon('fas', 'image')
-          %input.input-box__image__file{type: "file"}
-      %input.send-btn{:type => "submit", :value => "Send"}
-          
-  
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'send-btn'
