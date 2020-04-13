@@ -43,7 +43,6 @@
     height: calc(100vh - 100px);
     padding: 20px;
     .group {
-      text-decoration: none;
       margin-bottom: 40px;
       &__group-name {
         font-size: 15px;
@@ -53,6 +52,9 @@
       &__letest-message {
         font-size: 11px;
         color: $main_color;
+      }
+      a {
+        text-decoration: none;
       }
     }
   }
